@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Lori's calculator</title>
+		<!-- jQuery CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- links to internal css and main.js files -->
+		<link rel="stylesheet" href="main.css">
+		<script type="text/javascript" src="main.js"></script>
+		<!-- font -->
+		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+	</head>
+
+
+  
+	<body>
+		<h1>Lori's Calculator</h1>
+		<p>(beep boop!)</p>
+		<div id="calc">
+			<audio id="hover" src="click_04.wav" ></audio>
+			<audio id="click" src="digi_plink.wav" ></audio>
+			<audio id="calculate" src="pop_drip.wav" ></audio>
+			<h2>Calculate!</h2>
+			<form id="calculator">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="1">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="2">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="3">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="4">
+				<br>
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="5">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="6">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="7">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="8">
+				<br>
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="9">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="0">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="+">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="-">
+				<br>
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="*">
+				<input onmouseover="playHover()" onclick="playClick()" type="button" class="btn" value="/">
+				<input onmouseover="playHover()" onclick="playEquals()" type="button" class="btn" id="equals" value="=">
+
+			</form>
+		</div>
+		<div id="pastCalculations">
+			<h3>Past Calculations:</h3>
+			<ul id="calculations"></ul>
+		</div>
+
+		    <script>
+  				function playHover(){
+		        var audio = document.getElementById("hover");
+		        audio.play();
+                };
+                function playClick(){
+		        var audio = document.getElementById("click");
+		        audio.play();
+                };
+                function playEquals(){
+		        var audio = document.getElementById("calculate");
+		        audio.play();
+                };
+   			</script>
+	</body>
+</html>
