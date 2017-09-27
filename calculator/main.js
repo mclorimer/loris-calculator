@@ -15,6 +15,14 @@ $(document).ready(function(){
 	var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
 	var operatorToUse = "";
 	var operant = "";
+	var calculations = JSON.parse(localStorage.getItem('calculations')) || [];
+
+	// adding past calculations to page
+	if (calculations.length != 0) {
+		for (i=0; i <= calculations.length; i++){
+			$("#calculations").append(calculations[i]);
+		}
+	};
 
 	var maths = {
 		'+': function(x, y) {return x + y},
@@ -77,9 +85,16 @@ $(document).ready(function(){
 			var x = Number(firstNum);
 			var y = Number(numParts.join(""));
 			firstNum = maths[operatorToUse](x, y);
+
 			var listItemString = "<li>" + x + " " + operatorToUse + " "+ y + " = " + firstNum+ "</li>";
+			calculations.push(listItemString);
+			localStorage.setItem('calculations', JSON.stringify(calculations))
+
 			console.log(listItemString);
 			firstNum = maths[operatorToUse](x, y);
+
+
+
 			$("#calculations").append(listItemString)
 			numParts = []
 			if (value != "Enter"){
